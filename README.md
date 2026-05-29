@@ -237,33 +237,7 @@ node --check content.js
 node -e "JSON.parse(require('fs').readFileSync('manifest.json','utf8')); console.log('ok')"
 ```
 
-## 发布建议 🚢
 
-建议先做 GitHub 发布，不急着上浏览器商店。
-
-建议步骤：
-
-1. 新建 GitHub 仓库：`ai-conversation-navigator`
-2. 上传这些文件。
-3. 后续补一张截图到 `assets/screenshot.png`。
-4. 创建一个 GitHub Release，例如 `v0.5.5`。
-5. 打包 zip，供用户下载后本地安装。
-
-打包时不要包含：
-
-- `.git`
-- `.DS_Store`
-- `Thumbs.db`
-- 旧的 zip / crx 文件
-
-## 后续计划 🗺️
-
-- 增加手动选择对话区域的模式。
-- 增加“复制当前问题链接/位置”的功能。
-- 增加站点适配配置，让用户自己添加选择器。
-- 增加导出时的时间戳、站点名和模型名识别。
-- 增加更明确的错误提示。
-- 准备 Chrome Web Store / Edge Add-ons 发布材料。
 
 ## 反馈 💬
 
