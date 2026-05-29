@@ -1,0 +1,142 @@
+{
+  "extensionName": {
+    "message": "AI Conversation Exporter"
+  },
+  "extensionDescription": {
+    "message": "Export questions and answers from common AI chat pages, then jump to any question."
+  },
+  "ariaLabel": {
+    "message": "AI chat export and jump toolbar"
+  },
+  "title": {
+    "message": "Q/A"
+  },
+  "scanning": {
+    "message": "Scanning"
+  },
+  "dragTitle": {
+    "message": "Drag to move"
+  },
+  "collapseTitle": {
+    "message": "Collapse"
+  },
+  "expandTitle": {
+    "message": "Expand Q/A toolbar"
+  },
+  "jumpTitle": {
+    "message": "Choose a question"
+  },
+  "previousTitle": {
+    "message": "Previous question"
+  },
+  "nextTitle": {
+    "message": "Next question"
+  },
+  "noQuestions": {
+    "message": "No questions"
+  },
+  "questionOption": {
+    "message": "Q $INDEX$",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "currentQuestion": {
+    "message": "$CURRENT$/$TOTAL$",
+    "placeholders": {
+      "current": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "countFull": {
+    "message": "$QUESTION_COUNT$ Q · $ANSWER_COUNT$ A · current $CURRENT$",
+    "placeholders": {
+      "question_count": {
+        "content": "$1"
+      },
+      "answer_count": {
+        "content": "$2"
+      },
+      "current": {
+        "content": "$3"
+      }
+    }
+  },
+  "miniCount": {
+    "message": "$COUNT$ Q",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportTypeLabel": {
+    "message": "Content"
+  },
+  "exportFormatLabel": {
+    "message": "Format"
+  },
+  "typeAll": {
+    "message": "All"
+  },
+  "typeQuestions": {
+    "message": "Questions"
+  },
+  "typeAnswers": {
+    "message": "Answers"
+  },
+  "exportButton": {
+    "message": "Export"
+  },
+  "rescanButton": {
+    "message": "Rescan"
+  },
+  "mdFormat": {
+    "message": "Markdown"
+  },
+  "txtFormat": {
+    "message": "TXT"
+  },
+  "chatgptConversationTitle": {
+    "message": "AI conversation"
+  },
+  "exportedContent": {
+    "message": "Exported content"
+  },
+  "exportedAt": {
+    "message": "Exported at"
+  },
+  "source": {
+    "message": "Source"
+  },
+  "roleUser": {
+    "message": "Question"
+  },
+  "roleAssistant": {
+    "message": "Answer"
+  },
+  "roleSystem": {
+    "message": "System"
+  },
+  "roleTool": {
+    "message": "Tool"
+  },
+  "noExportContent": {
+    "message": "Nothing to export"
+  },
+  "noQuestionFound": {
+    "message": "No questions found"
+  },
+  "exportStarted": {
+    "message": "Export started"
+  },
+  "rescanned": {
+    "message": "Rescanned"
+  }
+}

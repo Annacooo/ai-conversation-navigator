@@ -1,0 +1,142 @@
+{
+  "extensionName": {
+    "message": "AI 对话导出与跳转"
+  },
+  "extensionDescription": {
+    "message": "在常见 AI 对话页导出问题/回答，并快速跳转到指定提问。"
+  },
+  "ariaLabel": {
+    "message": "AI 对话导出与跳转工具条"
+  },
+  "title": {
+    "message": "Q/A"
+  },
+  "scanning": {
+    "message": "扫描中"
+  },
+  "dragTitle": {
+    "message": "拖动移动位置"
+  },
+  "collapseTitle": {
+    "message": "收起"
+  },
+  "expandTitle": {
+    "message": "展开 Q/A 工具条"
+  },
+  "jumpTitle": {
+    "message": "选择要跳到的提问"
+  },
+  "previousTitle": {
+    "message": "上一问"
+  },
+  "nextTitle": {
+    "message": "下一问"
+  },
+  "noQuestions": {
+    "message": "无提问"
+  },
+  "questionOption": {
+    "message": "第 $INDEX$ 问",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "currentQuestion": {
+    "message": "$CURRENT$/$TOTAL$",
+    "placeholders": {
+      "current": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "countFull": {
+    "message": "$QUESTION_COUNT$ 个提问 · $ANSWER_COUNT$ 个回答 · 当前 $CURRENT$",
+    "placeholders": {
+      "question_count": {
+        "content": "$1"
+      },
+      "answer_count": {
+        "content": "$2"
+      },
+      "current": {
+        "content": "$3"
+      }
+    }
+  },
+  "miniCount": {
+    "message": "$COUNT$ 问",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportTypeLabel": {
+    "message": "内容"
+  },
+  "exportFormatLabel": {
+    "message": "格式"
+  },
+  "typeAll": {
+    "message": "全部问答"
+  },
+  "typeQuestions": {
+    "message": "仅提问"
+  },
+  "typeAnswers": {
+    "message": "仅回答"
+  },
+  "exportButton": {
+    "message": "导出"
+  },
+  "rescanButton": {
+    "message": "重扫"
+  },
+  "mdFormat": {
+    "message": "Markdown"
+  },
+  "txtFormat": {
+    "message": "TXT"
+  },
+  "chatgptConversationTitle": {
+    "message": "AI 对话"
+  },
+  "exportedContent": {
+    "message": "导出内容"
+  },
+  "exportedAt": {
+    "message": "导出时间"
+  },
+  "source": {
+    "message": "来源"
+  },
+  "roleUser": {
+    "message": "提问"
+  },
+  "roleAssistant": {
+    "message": "回答"
+  },
+  "roleSystem": {
+    "message": "系统"
+  },
+  "roleTool": {
+    "message": "工具"
+  },
+  "noExportContent": {
+    "message": "没有可导出的内容"
+  },
+  "noQuestionFound": {
+    "message": "没有找到提问"
+  },
+  "exportStarted": {
+    "message": "已开始导出"
+  },
+  "rescanned": {
+    "message": "已重扫"
+  }
+}
