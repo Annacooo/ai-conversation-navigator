@@ -1,0 +1,104 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="pageBg" x1="0" y1="0" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EEF2F7"/>
+    </linearGradient>
+    <linearGradient id="toolbarBg" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#F7F8FA" stop-opacity="0.86"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" rx="28" fill="url(#pageBg)"/>
+
+  <rect x="60" y="56" width="1080" height="648" rx="18" fill="#FFFFFF" filter="url(#shadow)"/>
+  <rect x="60" y="56" width="1080" height="54" rx="18" fill="#F6F7F9"/>
+  <circle cx="86" cy="83" r="7" fill="#FF5F57"/>
+  <circle cx="108" cy="83" r="7" fill="#FFBD2E"/>
+  <circle cx="130" cy="83" r="7" fill="#28C840"/>
+  <rect x="177" y="72" width="460" height="22" rx="11" fill="#E5E7EB"/>
+  <text x="198" y="87" font-family="Arial, sans-serif" font-size="12" fill="#64748B">AI chat page</text>
+
+  <rect x="116" y="166" width="710" height="72" rx="16" fill="#F8FAFC" stroke="#E5E7EB"/>
+  <text x="142" y="196" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827">User question</text>
+  <text x="142" y="219" font-family="Arial, sans-serif" font-size="14" fill="#64748B">How do I jump back to an earlier question in a long AI conversation?</text>
+
+  <rect x="116" y="266" width="760" height="118" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="142" y="300" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827">AI answer</text>
+  <rect x="142" y="323" width="640" height="12" rx="6" fill="#E5E7EB"/>
+  <rect x="142" y="347" width="590" height="12" rx="6" fill="#E5E7EB"/>
+  <rect x="142" y="371" width="500" height="12" rx="6" fill="#E5E7EB"/>
+
+  <rect x="116" y="428" width="690" height="72" rx="16" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="142" y="458" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827">User question</text>
+  <text x="142" y="481" font-family="Arial, sans-serif" font-size="14" fill="#64748B">Can I export only my questions, only answers, or the whole chat?</text>
+
+  <g filter="url(#shadow)">
+    <rect x="966" y="126" width="78" height="482" rx="39" fill="url(#toolbarBg)" stroke="#DADDE3"/>
+    <text x="1005" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#111827">Q/A</text>
+    <rect x="985" y="176" width="40" height="22" rx="11" fill="#E8F2FF"/>
+    <text x="1005" y="191" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#007AFF">4 Q</text>
+
+    <rect x="978" y="220" width="54" height="48" rx="24" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="1005" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#111827">↑</text>
+
+    <rect x="978" y="288" width="54" height="54" rx="27" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="1005" y="321" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111827">2/4</text>
+
+    <rect x="978" y="362" width="54" height="48" rx="24" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="1005" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#111827">↓</text>
+
+    <rect x="974" y="432" width="62" height="54" rx="27" fill="#007AFF"/>
+    <text x="1005" y="465" text-anchor="middle" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">导出</text>
+
+    <rect x="974" y="506" width="62" height="48" rx="24" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="1005" y="535" text-anchor="middle" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" font-weight="700" fill="#6B7280">重扫</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="700" y="220" width="250" height="236" rx="10" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="720" y="248" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" font-weight="700" fill="#6B7280">选择要跳到的提问</text>
+
+    <rect x="720" y="268" width="210" height="48" rx="8" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="736" y="289" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" font-weight="800" fill="#111827">第 1 问</text>
+    <text x="736" y="306" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="12" fill="#6B7280">How do I jump back...</text>
+
+    <rect x="720" y="328" width="210" height="54" rx="8" fill="#E8F2FF" stroke="#60A5FA"/>
+    <text x="736" y="350" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" font-weight="800" fill="#111827">第 2 问</text>
+    <text x="736" y="367" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="12" fill="#6B7280">Can I export only...</text>
+
+    <rect x="720" y="394" width="210" height="48" rx="8" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="736" y="415" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" font-weight="800" fill="#111827">第 3 问</text>
+    <text x="736" y="432" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="12" fill="#6B7280">Does it work on...</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="700" y="482" width="250" height="168" rx="10" fill="#FFFFFF" stroke="#DADDE3"/>
+    <text x="720" y="512" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" font-weight="700" fill="#6B7280">内容</text>
+    <rect x="720" y="524" width="210" height="34" rx="17" fill="#F8FAFC" stroke="#DADDE3"/>
+    <text x="738" y="546" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" fill="#111827">全部问答</text>
+
+    <text x="720" y="584" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" font-weight="700" fill="#6B7280">格式</text>
+    <rect x="720" y="596" width="210" height="34" rx="17" fill="#F8FAFC" stroke="#DADDE3"/>
+    <text x="738" y="618" font-family="Arial, sans-serif" font-size="13" fill="#111827">Markdown</text>
+  </g>
+
+  <path d="M946 315 C910 315 910 315 950 315" stroke="#007AFF" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="603" y="207" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">点击问数打开滚动列表</text>
+  <text x="603" y="229" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" fill="#64748B">直接跳到第 N 问，不用手动翻长对话</text>
+
+  <path d="M956 458 C928 458 928 540 950 540" stroke="#007AFF" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="516" y="604" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">点击导出再选择内容和格式</text>
+  <text x="516" y="626" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" fill="#64748B">支持全部问答、仅提问、仅回答，以及 Markdown / JSON / TXT</text>
+
+  <path d="M1005 126 C1005 90 930 90 874 124" stroke="#007AFF" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="652" y="124" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="15" font-weight="800" fill="#111827">顶部 Q/A 区域</text>
+  <text x="652" y="146" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="13" fill="#64748B">拖动可移动，点击可收起</text>
+</svg>
