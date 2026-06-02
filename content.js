@@ -134,7 +134,7 @@
       <div class="cgpt-nav-toast" data-cgpt-toast aria-live="polite"></div>
     </div>
 
-    <button class="cgpt-nav-mini" data-cgpt-action="expand" title="${t("expandTitle")}">
+    <button class="cgpt-nav-mini" data-cgpt-drag data-cgpt-action="expand" title="${t("expandTitle")}">
       <strong>${t("title")}</strong>
       <span data-cgpt-mini-pill>${t("scanning")}</span>
     </button>
