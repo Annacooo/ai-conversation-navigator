@@ -405,15 +405,65 @@
     });
   }
 
+  function isTextContainerTag(node) {
+    return /^(DIV|SECTION|ARTICLE)$/.test(node.tagName || "");
+  }
+
+  function hasBubbleLikeSurface(node) {
+    const style = window.getComputedStyle(node);
+    const background = style.backgroundColor || "";
+    const radius = Number.parseFloat(style.borderRadius || "0");
+    const hasVisibleBackground =
+      background &&
+      background !== "transparent" &&
+      background !== "rgba(0, 0, 0, 0)" &&
+      background !== "rgba(255, 255, 255, 0)";
+
+    return hasVisibleBackground && radius >= 6;
+  }
+
+  function isInsideRichAnswerContent(node) {
+    return Boolean(
+      node.closest(
+        [
+          "li",
+          "ul",
+          "ol",
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "strong",
+          "b",
+          "em",
+          "blockquote",
+          "pre",
+          "code",
+          "table"
+        ].join(",")
+      )
+    );
+  }
+
   function isLikelyRightSideUserBubble(node, text) {
     const rect = node.getBoundingClientRect();
     const normalized = normalizeMessageText(text);
 
-    if (!normalized || normalized.length < 2 || normalized.length > 1200) {
+    if (!isTextContainerTag(node)) {
+      return false;
+    }
+
+    if (!normalized || normalized.length < 2 || normalized.length > 600) {
       return false;
     }
 
     if (!isVisibleElement(node) || isInteractiveNode(node) || isUiOnlyText(normalized)) {
+      return false;
+    }
+
+    if (isInsideRichAnswerContent(node) || !hasBubbleLikeSurface(node)) {
       return false;
     }
 
@@ -422,8 +472,8 @@
     }
 
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const rightAligned = rect.right > viewportWidth * 0.62 && rect.left > viewportWidth * 0.38;
-    const bubbleSized = rect.width >= 80 && rect.width <= Math.min(760, viewportWidth * 0.58);
+    const rightAligned = rect.right > viewportWidth * 0.72 && rect.left > viewportWidth * 0.42;
+    const bubbleSized = rect.width >= 140 && rect.width <= Math.min(620, viewportWidth * 0.48);
     const notComposer = !node.closest("form,[data-testid*='composer' i],[class*='composer' i],[class*='input' i]");
 
     return rightAligned && bubbleSized && notComposer;
@@ -431,7 +481,7 @@
 
   function collectRightAlignedUserMessages(scope) {
     const candidates = Array.from(
-      scope.querySelectorAll("div,p,span,section,article,[class]")
+      scope.querySelectorAll("div,section,article")
     );
     const seen = new Set();
     const messages = [];
@@ -451,7 +501,7 @@
       messages.push({
         role: "user",
         text,
-        element: node,
+        element: getMessageContainer(node),
         node
       });
     }
