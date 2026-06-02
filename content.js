@@ -184,6 +184,10 @@
     return knownAiHostPatterns.some((pattern) => pattern.test(host));
   }
 
+  function isDoubaoHost() {
+    return /(^|\.)doubao\.com$/.test(location.hostname.toLowerCase());
+  }
+
   function updateVisibility() {
     root.hidden = !isKnownAiHost() && state.messages.length === 0;
   }
@@ -374,6 +378,88 @@
     return uiOnlyText.has(normalized);
   }
 
+  function isVisibleElement(element) {
+    const rect = element.getBoundingClientRect();
+    const style = window.getComputedStyle(element);
+
+    return (
+      rect.width > 0 &&
+      rect.height > 0 &&
+      style.display !== "none" &&
+      style.visibility !== "hidden" &&
+      Number(style.opacity || 1) > 0
+    );
+  }
+
+  function hasSameTextChild(node, text) {
+    const normalizedText = normalizeMessageText(text);
+    const children = Array.from(node.children || []);
+
+    return children.some((child) => {
+      if (!isVisibleElement(child)) {
+        return false;
+      }
+
+      const childText = normalizeMessageText(cleanText(child));
+      return childText && childText === normalizedText;
+    });
+  }
+
+  function isLikelyRightSideUserBubble(node, text) {
+    const rect = node.getBoundingClientRect();
+    const normalized = normalizeMessageText(text);
+
+    if (!normalized || normalized.length < 2 || normalized.length > 1200) {
+      return false;
+    }
+
+    if (!isVisibleElement(node) || isInteractiveNode(node) || isUiOnlyText(normalized)) {
+      return false;
+    }
+
+    if (hasSameTextChild(node, normalized)) {
+      return false;
+    }
+
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const rightAligned = rect.right > viewportWidth * 0.62 && rect.left > viewportWidth * 0.38;
+    const bubbleSized = rect.width >= 80 && rect.width <= Math.min(760, viewportWidth * 0.58);
+    const notComposer = !node.closest("form,[data-testid*='composer' i],[class*='composer' i],[class*='input' i]");
+
+    return rightAligned && bubbleSized && notComposer;
+  }
+
+  function collectRightAlignedUserMessages(scope) {
+    const candidates = Array.from(
+      scope.querySelectorAll("div,p,span,section,article,[class]")
+    );
+    const seen = new Set();
+    const messages = [];
+
+    for (const node of candidates) {
+      const text = cleanText(node);
+      if (!isLikelyRightSideUserBubble(node, text)) {
+        continue;
+      }
+
+      const key = normalizeMessageText(text);
+      if (seen.has(key)) {
+        continue;
+      }
+
+      seen.add(key);
+      messages.push({
+        role: "user",
+        text,
+        element: node,
+        node
+      });
+    }
+
+    messages.sort((left, right) => left.element.getBoundingClientRect().top - right.element.getBoundingClientRect().top);
+    return messages;
+  }
+
   function normalizeMessageText(text) {
     return text.replace(/\s+/g, " ").trim();
   }
@@ -488,6 +574,10 @@
         element: getMessageContainer(node),
         node
       });
+    }
+
+    if (!messages.some((message) => message.role === "user") && isDoubaoHost()) {
+      return collectRightAlignedUserMessages(scope);
     }
 
     return messages;
