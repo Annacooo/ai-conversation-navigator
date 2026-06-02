@@ -4,7 +4,7 @@
 
 它最开始是为 ChatGPT 长对话做的，因为 AI 回答太长，翻回上一个问题真的很烦。现在它已经改成更通用的版本，会尝试适配常见 AI 对话工具。
 
-> ✨ 当前版本：`0.5.5`
+> ✨ 当前版本：`0.5.6`
 >
 > 🚧 状态：开发中，适合本地安装测试；还没有发布到 Chrome Web Store / Edge Add-ons。
 
@@ -56,6 +56,43 @@
 同时它也会尝试识别常见的 `user / assistant`、`query / response`、`model-response` 等页面结构。
 
 ## 安装 🛠️
+
+### 让 AI Agent 帮你安装
+
+如果你不想自己折腾浏览器扩展目录，可以把这个 GitHub 链接发给你的 AI Agent：
+
+```text
+https://github.com/Annacooo/ai-conversation-navigator
+```
+
+然后对它说：
+
+```text
+请帮我安装这个浏览器扩展。先打开这个 GitHub 仓库，阅读 README.md、PRIVACY.md 和 STORE_LISTING.md，确认它的用途、权限和隐私说明。然后下载或克隆仓库，检查 manifest.json 是否在项目根目录，确认 content.js、style.css 和 _locales 文件夹都存在。接着帮我在 Chrome 或 Edge 里通过“加载已解压的扩展程序”安装它。安装后打开一个 AI 对话页面测试工具条是否出现，并测试收起/展开、拖动、上一问/下一问、问题列表和导出功能。不要跳过检查步骤，遇到浏览器权限提示时请解释给我听。
+```
+
+如果你的 AI Agent 可以操作电脑或浏览器，它通常应该按这个流程做：
+
+1. 打开仓库并阅读说明文件。
+2. 下载 ZIP 或克隆仓库到本地。
+3. 解压后确认目录结构类似这样：
+
+   ```text
+   ai-conversation-navigator
+   ├── manifest.json
+   ├── content.js
+   ├── style.css
+   └── _locales
+   ```
+
+4. 打开 Chrome 的 `chrome://extensions` 或 Edge 的 `edge://extensions`。
+5. 开启“开发者模式”。
+6. 点击“加载已解压的扩展程序”。
+7. 选择包含 `manifest.json` 的项目文件夹。
+8. 打开或重新载入 AI 对话页面。
+9. 测试工具条是否能正常拖动、收起、展开、跳转和导出。
+
+注意：安装 agent 应该优先执行 README 里的流程。如果它发现仓库内容、权限或说明和这里不一致，应该先停下来告诉你。
 
 ### 本地安装
 
