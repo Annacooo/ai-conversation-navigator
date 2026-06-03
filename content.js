@@ -1181,6 +1181,7 @@
       startY: 0,
       startLeft: 0,
       startTop: 0,
+      handle: null,
       action: "",
       moved: false
     };
@@ -1197,9 +1198,11 @@
       dragState.startY = event.clientY;
       dragState.startLeft = rect.left;
       dragState.startTop = rect.top;
+      dragState.handle = handle;
       dragState.action = handle.getAttribute("data-cgpt-action") || "";
       dragState.moved = false;
-      root.setPointerCapture(event.pointerId);
+      handle.setPointerCapture(event.pointerId);
+      event.preventDefault();
     });
 
     root.addEventListener("pointermove", (event) => {
@@ -1232,10 +1235,14 @@
         setCollapsed(dragState.action === "collapse");
       }
 
+      const captureHandle = dragState.handle;
       dragState.pointerId = null;
+      dragState.handle = null;
       dragState.action = "";
       try {
-        root.releasePointerCapture(event.pointerId);
+        if (captureHandle?.hasPointerCapture?.(event.pointerId)) {
+          captureHandle.releasePointerCapture(event.pointerId);
+        }
       } catch (error) {
         // Pointer capture may already be released by the browser.
       }
@@ -1246,8 +1253,17 @@
         return;
       }
 
+      const captureHandle = dragState.handle;
       dragState.pointerId = null;
+      dragState.handle = null;
       dragState.action = "";
+      try {
+        if (captureHandle?.hasPointerCapture?.(event.pointerId)) {
+          captureHandle.releasePointerCapture(event.pointerId);
+        }
+      } catch (error) {
+        // Pointer capture may already be released by the browser.
+      }
     });
   }
 
