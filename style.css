@@ -10,7 +10,7 @@
   --cgpt-nav-accent-hover: #006ee6;
   color: var(--cgpt-nav-text);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   left: auto;
   line-height: 1.35;
   position: fixed;
@@ -35,7 +35,7 @@
   -webkit-backdrop-filter: blur(22px) saturate(170%);
   backdrop-filter: blur(22px) saturate(170%);
   border: 1px solid var(--cgpt-nav-border);
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 #cgpt-conversation-navigator .cgpt-nav-bar {
@@ -43,12 +43,12 @@
   background: var(--cgpt-nav-bg);
   border-radius: 999px;
   display: grid;
-  gap: 8px;
+  gap: 5px;
   grid-template-columns: 1fr;
   justify-items: center;
-  padding: 7px;
+  padding: 5px;
   position: relative;
-  width: 76px;
+  width: 60px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-grip,
@@ -71,14 +71,14 @@
   display: grid;
   gap: 3px;
   justify-items: center;
-  min-height: 50px;
-  padding: 6px 8px;
-  width: 60px;
+  min-height: 42px;
+  padding: 4px 5px;
+  width: 48px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-grip strong,
 #cgpt-conversation-navigator .cgpt-nav-mini strong {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -87,11 +87,11 @@
   background: rgba(0, 122, 255, 0.12);
   border-radius: 999px;
   color: var(--cgpt-nav-accent);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  max-width: 58px;
+  max-width: 46px;
   overflow: hidden;
-  padding: 2px 5px;
+  padding: 1px 4px;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -109,8 +109,8 @@
 
 #cgpt-conversation-navigator button {
   cursor: pointer;
-  min-height: 40px;
-  padding: 6px 10px;
+  min-height: 34px;
+  padding: 4px 7px;
   white-space: nowrap;
 }
 
@@ -135,18 +135,18 @@
 }
 
 #cgpt-conversation-navigator .cgpt-nav-icon-button {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   line-height: 1;
   padding: 0;
-  width: 58px;
+  width: 46px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-question-button {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  padding: 4px 5px;
-  width: 58px;
+  padding: 3px 4px;
+  width: 46px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-question-button span {
@@ -160,7 +160,7 @@
   border-color: var(--cgpt-nav-accent);
   color: #ffffff;
   font-weight: 700;
-  width: 58px;
+  width: 46px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-primary:hover {
@@ -170,7 +170,7 @@
 #cgpt-conversation-navigator .cgpt-nav-quiet {
   color: var(--cgpt-nav-muted);
   font-weight: 700;
-  width: 58px;
+  width: 46px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-mini {
@@ -178,18 +178,18 @@
   background: var(--cgpt-nav-bg);
   border-radius: 999px;
   display: grid;
-  gap: 4px;
+  gap: 3px;
   justify-items: center;
-  min-height: 98px;
-  padding: 11px 8px;
-  width: 64px;
+  min-height: 74px;
+  padding: 8px 5px;
+  width: 50px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-question-menu,
 #cgpt-conversation-navigator .cgpt-nav-export-panel {
   background: var(--cgpt-nav-panel);
   border-radius: 8px;
-  left: 86px;
+  left: 68px;
   padding: 10px;
   position: absolute;
   top: 70px;
@@ -199,11 +199,11 @@
 #cgpt-conversation-navigator.is-left-side .cgpt-nav-question-menu,
 #cgpt-conversation-navigator.is-left-side .cgpt-nav-export-panel {
   left: auto;
-  right: 86px;
+  right: 68px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-export-panel {
-  top: 218px;
+  top: 174px;
 }
 
 #cgpt-conversation-navigator .cgpt-nav-panel-title {
@@ -303,7 +303,7 @@
   padding: 7px 11px;
   pointer-events: none;
   position: absolute;
-  right: 86px;
+  right: 68px;
   text-align: center;
   top: 50%;
   transform: translate(4px, -50%);
@@ -312,7 +312,7 @@
 }
 
 #cgpt-conversation-navigator:not(.is-left-side) .cgpt-nav-toast {
-  left: 86px;
+  left: 68px;
   right: auto;
   transform: translate(-4px, -50%);
 }
